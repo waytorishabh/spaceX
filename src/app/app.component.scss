@@ -1,0 +1,322 @@
+.outer-box {
+  display: flex;
+}
+
+.inner-box {
+  display: flex;
+  ;
+}
+
+.filter-container {
+  width: 20%;
+  background-color: white;
+  height: fit-content;
+  padding-bottom: 5%;
+}
+
+.heading-launch {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+
+.sub-filter-div {
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.sub-heading {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.button-text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.right-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.mission-name {
+  color: rgb(67, 77, 146);
+  font-weight: 700;
+  padding: 10px 0px 15px 0px;
+}
+
+.mission-details-heading {
+  font-weight: 700;
+  padding: 5px 0px;
+}
+
+.mission-details-value {
+  color: rgb(134 142 197);
+  font-weight: 500;
+}
+
+.line {
+  width: 70%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.filter {
+  padding-left: 15px;
+  padding-top: 15px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer {
+  text-align: center;
+}
+
+.box {
+  border-radius: 10px;
+  width: 19.5%;
+  height: 600px;
+}
+
+.launch-card {
+  border-radius: 10px;
+  width: 24%;
+  background-color: white;
+  height: fit-content;
+}
+
+.image {
+  height: 200px;
+  width: 180px;
+}
+
+.left-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-child-container {
+  width: 80%;
+  position: relative;
+  left: 10%;
+}
+
+.image-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(242, 242, 242);
+}
+
+.filter-normal-button {
+  background-color: rgb(197, 224, 155);
+  border-radius: 4px;
+  width: 5rem;
+  height: 2rem;
+  margin: 7px;
+  border: 0;
+}
+
+.filter-normal-button:hover {
+  background-color: rgb(197, 224, 155);
+  ;
+}
+
+.selected {
+  background-color: rgb(124, 186, 1) !important;
+}
+
+*,
+*:focus,
+*:hover {
+  outline: none;
+}
+
+@media(max-width: 700px) {
+  .outer-box {
+    display: block;
+  }
+
+  .inner-box {
+    display: block;
+  }
+
+
+  .filter-container {
+    width: 100% !important;
+    margin: 0;
+  }
+
+  .right-container {
+    display: block;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .right-container>div {
+    margin-top: 10px;
+  }
+
+  .launch-card {
+    width: 100%;
+  }
+
+  .left-child-container {
+    width: 66%;
+    position: relative;
+    left: 17%;
+  }
+
+  .launch-year {
+    width: 50%;
+  }
+
+  .filter-button {
+    text-align: center;
+  }
+}
+
+@media(min-width: 700px) and (max-width: 1024px) {
+  .outer-box {
+    display: flex;
+  }
+
+  .filter-container {
+    width: 33.33% !important;
+    margin: 0;
+  }
+
+  .right-container {
+    display: flex !important;
+    flex-wrap: wrap;
+    width: 66% !important;
+  }
+
+  .right-container>div {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .launch-card {
+    width: 49%;
+    margin-left: 1%;
+  }
+
+  .left-child-container {
+    width: 98% !important;
+    position: relative;
+    left: 2%;
+  }
+
+  .launch-year {
+    width: 50%;
+  }
+
+  .filter-button {
+    text-align: center;
+  }
+
+  .filter {
+    padding-left: 15px;
+    padding-top: 0px !important;
+  }
+}
+
+@media(min-width: 1024px) and (max-width: 1440px) {
+  .outer-box {
+    display: flex;
+  }
+
+  .filter-container {
+    width: 20% !important;
+    margin: 0;
+  }
+
+  .right-container {
+    display: flex !important;
+    flex-wrap: wrap;
+    width: 80% !important;
+  }
+
+  .right-container>div {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .launch-card {
+    width: 23%;
+    margin-left: 2%;
+  }
+
+  .left-child-container {
+    width: 98% !important;
+    position: relative;
+    left: 2%;
+  }
+
+  .launch-year {
+    width: 50%;
+  }
+
+  .filter-button {
+    text-align: center;
+  }
+
+  .filter {
+    padding-left: 15px;
+    padding-top: 0px !important;
+  }
+}
+@media(min-width: 1440px) {
+  .outer-box {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1440px;
+    padding-right: 10px;
+    display: flex;
+  }
+
+  .filter-container {
+    width: 20% !important;
+    margin: 0;
+  }
+
+  .right-container {
+    display: flex !important;
+    flex-wrap: wrap;
+    width: 80% !important;
+  }
+
+  .right-container>div {
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .launch-card {
+    width: 24%;
+    margin-left: 1%;
+  }
+
+  .left-child-container {
+    width: 98% !important;
+    position: relative;
+    left: 2%;
+  }
+
+  .launch-year {
+    width: 50%;
+  }
+
+  .filter-button {
+    text-align: center;
+  }
+
+  .filter {
+    padding-left: 15px;
+    padding-top: 0px !important;
+  }
+}

@@ -1,0 +1,89 @@
+<div class="outer-box"><span style="font-size: 32px;font-weight: 700;padding-bottom: 10px;">SpaceX Launch
+    Programs</span></div>
+<div class="inner-box">
+  <div class="box filter-container">
+    <span class="filter">Filters</span>
+    <div class="heading-launch">Launch Year</div>
+    <hr class="line" />
+    <div class="left-flex-container" style="padding: 3px 10px;">
+      <div *ngFor="let yr of launchYears" class="launch-year">
+        <div (click)="yearSelected(yr)" class="filter-button">
+          <button class="filter-normal-button" [class.selected]="yr===year">
+            <span class="sub-heading">{{ yr }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-filter-div">
+      <span class="sub-heading">Successful Launch</span>
+    </div>
+    <hr class="line" />
+    <div class="filter-button" style="display: flex;padding: 3px 10px;">
+      <div style="width:50%">
+        <button class="filter-normal-button" (click)="launchSelected('true')" [class.selected]="launch==='true'">
+          <span class="button-text">True</span>
+        </button>
+      </div>
+      <div style="width:50%">
+        <button class="filter-normal-button" (click)="launchSelected('false')" [class.selected]="launch==='false'">
+          <span class="button-text">False</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="sub-filter-div">
+      <span class="sub-heading">Successful Landing</span>
+    </div>
+    <hr class="line" />
+    <div class="filter-button" style="display: flex;padding: 3px 10px;">
+      <div style="width:50%">
+        <button class="filter-normal-button" (click)="landSelected('true')" [class.selected]="landing==='true'">
+          <span class="button-text">True</span>
+        </button>
+      </div>
+      <div style="width:50%">
+        <button class="filter-normal-button" (click)="landSelected('false')" [class.selected]="landing==='false'">
+          <span class="button-text">False</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-container">
+    <div *ngFor="let mission of missions" class="launch-card">
+      <div style="padding:25px;">
+        <div class="image-div">
+          <img src="{{ mission.links.mission_patch_small }}" alt="Mission Logo" class="image">
+        </div>
+
+        <div class="mission-name">
+          {{ mission.mission_name }} #{{ mission.flight_number }}
+        </div>
+        <div class="mission-details-heading">
+          Mission Ids:
+          <span *ngFor="let m of mission.mission_id">
+            <span class="mission-details-value">{{ m }}</span>
+          </span>
+        </div>
+        <div class="mission-details-heading">
+          Launch Year:
+          <span class="mission-details-value">{{ mission.launch_year }}</span>
+        </div>
+        <div class="mission-details-heading">
+          Successful Launch:
+          <span class="mission-details-value">{{ mission.launch_success }}</span>
+        </div>
+        <div class="mission-details-heading">
+          Successful Landing:<span
+            class="mission-details-value">{{mission.rocket.first_stage.cores[0].land_success}}</span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="missionCount == 0" style="margin-left: 30%;font-size: 35px;">No Mission Found
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <span style="font-weight:700;">Developed By: </span> Rishabh Chaudhary
+</div>
