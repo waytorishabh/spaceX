@@ -20,7 +20,7 @@ var path = require('path')
 var serveStatic = require('serve-static')
 
 var app = express()
-app.use(serveStatic(distDirs))
+app.use(serveStatic(distDir))
 
 var port = process.env.PORT || 8000
 app.listen(port)
