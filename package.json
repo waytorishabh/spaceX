@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run dev:ssr",
+    "start": "node dist/spaceX/server/main.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
