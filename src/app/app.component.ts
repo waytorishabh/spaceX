@@ -17,13 +17,12 @@ export class AppComponent implements OnInit {
 
   constructor(private router: Router, private AppComponentService: AppComponentService, private route: ActivatedRoute) {
     this.router.navigate([""], {
-      queryParams: { limit: 100, year: "", land_status: "", launch_status: "" },
+      queryParams: {  },
     });
    }
 
   ngOnInit() {
     this.route.queryParams.subscribe(val => {
-      console.log('value', val)
       if (val.year && val.launch_status && val.land_status) {
         this.AppComponentService.getAllFilter(val.year, val.launch_status, val.land_status).subscribe((data: any) => {
           this.missions = data;
@@ -37,6 +36,12 @@ export class AppComponent implements OnInit {
         })
       }
       if (val.year && val.launch_status === "" && val.land_status) {
+        this.AppComponentService.getAllFilter(val.year, val.launch_status, val.land_status).subscribe((data: any) => {
+          this.missions = data;
+          this.missionCount = this.missions.length;
+        })
+      }
+      if (val.year==="" && val.launch_status && val.land_status) {
         this.AppComponentService.getAllFilter(val.year, val.launch_status, val.land_status).subscribe((data: any) => {
           this.missions = data;
           this.missionCount = this.missions.length;
@@ -63,6 +68,9 @@ export class AppComponent implements OnInit {
       if (val.year === "" && val.launch_status === "" && val.land_status === "") {
         this.getAllMissions();
       }
+      else{
+          this.getAllMissions();
+      }
     })
   }
 
@@ -70,13 +78,13 @@ export class AppComponent implements OnInit {
     if (this.year === year) {
       this.year = ""
       this.router.navigate([""], {
-        queryParams: { limit: 100, year: "", land_status: this.landing, launch_status: this.launch },
+        queryParams: { year: "", land_status: this.landing, launch_status: this.launch },
       });
     }
     else {
       this.year = year;
       this.router.navigate([""], {
-        queryParams: { limit: 100, year: this.year, land_status: this.landing, launch_status: this.launch },
+        queryParams: { year: this.year, land_status: this.landing, launch_status: this.launch },
       });
     }
   }
@@ -85,13 +93,13 @@ export class AppComponent implements OnInit {
     if (this.launch === value) {
       this.launch = ""
       this.router.navigate([""], {
-        queryParams: { limit: 100, year: this.year, land_status: this.landing, launch_status: "" },
+        queryParams: { year: this.year, land_status: this.landing, launch_status: "" },
       });
     }
     else {
       this.launch = value;
       this.router.navigate([""], {
-        queryParams: { limit: 100, year: this.year, land_status: this.landing, launch_status: this.launch },
+        queryParams: { year: this.year, land_status: this.landing, launch_status: this.launch },
       });
     }
   }
@@ -100,13 +108,13 @@ export class AppComponent implements OnInit {
     if (this.landing === value) {
       this.landing = ""
       this.router.navigate([""], {
-        queryParams: { limit: 100, year: this.year, land_status: "", launch_status: this.launch },
+        queryParams: { year: this.year, land_status: "", launch_status: this.launch },
       });
     }
     else {
       this.landing = value;
       this.router.navigate([""], {
-        queryParams: { limit: 100, year: this.year, land_status: this.landing, launch_status: this.launch },
+        queryParams: { year: this.year, land_status: this.landing, launch_status: this.launch },
       });
     }
   }
