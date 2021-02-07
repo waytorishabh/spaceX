@@ -14,12 +14,13 @@
 
 // // Start the app by listening on the default Heroku port
 // app.listen(process.env.PORT || 8080);
+var distDir = __dirname + "/dist/";
 var express = require('express')
 var path = require('path')
 var serveStatic = require('serve-static')
 
 var app = express()
-app.use(serveStatic(path.join(__dirname, 'dist')))
+app.use(serveStatic(distDirs))
 
 var port = process.env.PORT || 8000
 app.listen(port)
